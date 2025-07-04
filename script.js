@@ -1,6 +1,3 @@
-// Include html2pdf library from CDN
-const html2pdf = window.html2pdf;
-
 // Your API key for ExchangeRate-API
 const apiKey = "8b175b1e4c758ca315c9fea7";
 
@@ -27,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const quoteContainer = document.getElementById('quote-container');
     const pdfBtn = document.getElementById('download-pdf');
     const screenshotBtn = document.getElementById('download-screenshot');
+    const printBtn = document.getElementById('print-quote');
 
     // Handling fee (static value)
     const handlingFee = 1000;  // AWG
@@ -76,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Enable download buttons and reset the button text
             pdfBtn.style.display = 'inline-block';
             screenshotBtn.style.display = 'inline-block';
+            printBtn.style.display = 'inline-block';
             generateQuoteBtn.disabled = false;
             generateQuoteBtn.innerText = "Generate Quote";
 
@@ -106,6 +105,11 @@ document.addEventListener('DOMContentLoaded', function () {
             link.download = 'quote.png';
             link.click();
         });
+    });
+
+    // Print the quote manually via PC
+    printBtn.addEventListener('click', function () {
+        window.print();
     });
 
 });
