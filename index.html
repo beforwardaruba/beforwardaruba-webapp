@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- PDF and HTML2PDF libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://unpkg.com/html2pdf.js"></script>
 </head>
@@ -35,11 +37,9 @@
         <button id="generate-quote">Generate Quote</button>
 
         <!-- Quote display -->
-        <div id="quote-container" style="display:none;">
-            <!-- Quote content gets inserted here -->
-        </div>
+        <div id="quote-container" style="display:none;"></div>
 
-        <!-- Download buttons -->
+        <!-- Export buttons -->
         <div class="export-buttons">
             <button id="download-html" style="display:none;">Download HTML Version</button>
             <button id="download-pdf" style="display:none;">Download PDF Version</button>
