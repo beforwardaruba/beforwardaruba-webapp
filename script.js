@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Generate styled HTML version
+    // Generate styled HTML version with watermark
     generateStyledHtmlBtn.addEventListener('click', function () {
         const htmlContent = `
 <!DOCTYPE html>
@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
             margin: 0;
             padding: 0;
             color: #333;
+            position: relative;
         }
         .container {
             max-width: 800px;
@@ -145,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function () {
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 10px;
+            position: relative;
+            z-index: 2;
         }
         header {
             text-align: center;
@@ -170,6 +173,21 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-top: 25px;
             border-radius: 5px;
         }
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            height: 400px;
+            background-image: url('/watermark.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.05;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 1;
+        }
         footer {
             text-align: center;
             font-size: 13px;
@@ -184,9 +202,11 @@ document.addEventListener('DOMContentLoaded', function () {
     </style>
 </head>
 <body>
+    <div class="watermark"></div>
+
     <div class="container">
         <header>
-            <h1>🚗 Be Forward Aruba</h1>
+            <h1>Be Forward Aruba</h1>
             <p>Vehicle Import Quote</p>
         </header>
 
