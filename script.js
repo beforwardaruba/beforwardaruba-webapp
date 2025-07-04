@@ -150,9 +150,9 @@ document.addEventListener('DOMContentLoaded', function () {
             text-align: center;
             margin-bottom: 30px;
         }
-        header h1 {
-            color: #FFA500;
-            margin: 0;
+        header img {
+            max-height: 80px;
+            margin-bottom: 10px;
         }
         .quote-section h3 {
             margin-top: 0;
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <body>
     <div class="container">
         <header>
-            <h1>🚗 Be Forward Aruba</h1>
+            <img src="logo.png" alt="Be Forward Aruba Logo">
             <p>Vehicle Import Quote</p>
         </header>
 
