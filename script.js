@@ -1,6 +1,5 @@
-// Include jsPDF and html2canvas from CDN
-const jsPDF = window.jspdf.jsPDF;
-const html2canvas = window.html2canvas;
+// Include html2pdf library from CDN
+const html2pdf = window.html2pdf;
 
 // Your API key for ExchangeRate-API
 const apiKey = "8b175b1e4c758ca315c9fea7";
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         generateQuoteBtn.innerText = "Generating...";
 
         try {
-            // Fetch the exchange rate
+            // Fetch the exchange rate (USD to AWG)
             const usdToAwgRate = await fetchExchangeRate();
 
             // Convert car value from USD to AWG
@@ -80,14 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Generate and download the PDF
+    // Generate and download the PDF using html2pdf
     pdfBtn.addEventListener('click', function () {
-        const doc = new jsPDF();
-        doc.html(quoteContainer, {
-            callback: function (doc) {
-                doc.save('quote.pdf');
-            }
-        });
+        const options = {
+            margin: 1,
+            filename: 'quote.pdf',
+            html2canvas: { scale: 4 },
+            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().from(quoteContainer).set(options).save();
     });
 
     // Generate and download screenshot
