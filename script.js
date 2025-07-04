@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', function () {
             padding: 0;
             color: #333;
             position: relative;
-            /* Removed overflow: hidden to allow scrolling */
         }
 
         .watermark {
@@ -162,13 +161,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         header {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         header img {
-            max-width: 250px;
+            max-width: 200px;
             height: auto;
+            margin-right: auto;
+        }
+
+        .quote-title {
+            margin-left: auto;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: right;
         }
 
         .quote-section h3 {
@@ -198,6 +209,20 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quote-title {
+                margin: 10px 0 0;
+                text-align: center;
+            }
+
+            header img {
+                margin: 0 auto;
+            }
+
             .container {
                 padding: 20px 10px;
             }
@@ -214,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="container">
         <header>
             <img src="logo.png" alt="Be Forward Aruba Logo">
-            <p>Vehicle Import Quote</p>
+            <div class="quote-title">Vehicle Import Quote</div>
         </header>
 
         <div class="quote-section">
