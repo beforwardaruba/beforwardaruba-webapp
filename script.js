@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
             font-size: 20px;
             font-weight: bold;
             color: #333;
-            text-align: right;
+            text-align: left;
         }
 
         .quote-section h3 {
