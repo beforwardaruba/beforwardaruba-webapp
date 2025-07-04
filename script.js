@@ -56,14 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
             // Calculate the quote based on selected import duty
             const totalCost = carValueAWG + (carValueAWG * (selectedDuty / 100)) + handlingFee;
 
-            // Display the quote
+            // Format currency with commas and periods for decimal
+            const formatCurrency = (value) => value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+            // Display the quote with a more structured format
             quoteContainer.innerHTML = `
-                <h3>Your Quote</h3>
-                <p>Car Model: ${carModel}</p>
-                <p>Car Value: USD ${carValueUSD.toFixed(2)} (${carValueAWG.toFixed(2)} AWG)</p>
-                <p>Import Duty: ${selectedDuty}%</p>
-                <p>Handling Fee: AWG ${handlingFee}</p>
-                <p><strong>Total Cost: AWG ${totalCost.toFixed(2)}</strong></p>
+                <h3>📣 ${carModel}</h3>
+                <p>🇯🇵 <strong>Price - Auto + Shipping:</strong> ${formatCurrency(carValueAWG)} AWG</p>
+                <p>🇦🇷 <strong>Price - Invoerrecht:</strong> ${formatCurrency(carValueAWG * 0.19)} AWG</p>
+                <p>🚗 <strong>Price - Handling fees:</strong> ${formatCurrency(handlingFee)} AWG</p>
+                <h4>💵 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
+                <p><strong>Step 1️⃣</strong> Make the first payment to Beforward Japan 🇯🇵 in US Dollar (USD ${formatCurrency(carValueUSD)} / ${formatCurrency(carValueAWG)} AWG) via wire transfer. If you need help, we are available anytime.</p>
+                <p><strong>Step 2️⃣</strong> Second payment to Beforward Aruba 🇦🇼 (AWG ${formatCurrency(carValueAWG * 0.19)}) - Once the payment is received, the car and documentation will be sent via DHL to Aruba. The documents include the B/L (Bill of Lading) and Import Certificate.</p>
+                <p><strong>Step 3️⃣</strong> Enjoy your car in Aruba 🚗🔑</p>
+                <h5>💵 USD/AWG rate for today = ${usdToAwgRate}</h5>
+                <p><strong>🚨 Please ensure no delay in Step 2️⃣ to avoid additional costs. </strong></p>
             `;
 
             // Enable download buttons and reset the button text
