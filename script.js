@@ -232,12 +232,12 @@ document.addEventListener('DOMContentLoaded', function () {
     </style>
 </head>
 <body>
-    <img src="watermark.png" class="watermark" alt="Watermark">
+    <img src="https://beforwardaruba.github.io/webapp/public/watermark.png" class="watermark" alt="Watermark">
 
     <div class="container">
         <header>
             <div>
-                <img src="logo.png" alt="Be Forward Aruba Logo">
+                <img src="https://beforwardaruba.github.io/webapp/public/logo.png" alt="Be Forward Aruba Logo">
                 <div class="subtext">Your Vehicle Import Quote</div>
             </div>
         </header>
