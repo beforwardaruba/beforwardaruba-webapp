@@ -15,11 +15,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Event listener to generate the quote
     generateQuoteBtn.addEventListener('click', function () {
+        const carModel = document.getElementById('car-model').value.trim();
         const carValue = parseFloat(document.getElementById('car-value').value);
         const selectedDuty = parseInt(document.getElementById('import-duty').value);
         
-        if (isNaN(carValue)) {
-            alert("Please enter a valid value for car value.");
+        if (carModel === "" || isNaN(carValue)) {
+            alert("Please enter a valid car model and car value.");
             return;
         }
 
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Display the quote
         quoteContainer.innerHTML = `
             <h3>Your Quote</h3>
+            <p>Car Model: ${carModel}</p>
             <p>Car Value: AWG ${carValue.toFixed(2)}</p>
             <p>Import Duty: ${selectedDuty}%</p>
             <p>Handling Fee: AWG ${handlingFee}</p>
