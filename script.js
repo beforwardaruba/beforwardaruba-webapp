@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Generate styled HTML version
+    // Generate styled HTML version with logo and watermark
     generateStyledHtmlBtn.addEventListener('click', function () {
         const htmlContent = `
 <!DOCTYPE html>
@@ -137,30 +137,52 @@ document.addEventListener('DOMContentLoaded', function () {
             margin: 0;
             padding: 0;
             color: #333;
+            position: relative;
+            overflow: hidden;
         }
+
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.1;
+            z-index: 0;
+            width: 60%;
+            max-width: 500px;
+            pointer-events: none;
+        }
+
         .container {
+            position: relative;
+            z-index: 1;
             max-width: 800px;
             margin: auto;
             padding: 40px 20px;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.95);
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
             border-radius: 10px;
         }
+
         header {
             text-align: center;
             margin-bottom: 30px;
         }
-        header h1 {
-            color: #FFA500;
-            margin: 0;
+
+        header img {
+            max-width: 250px;
+            height: auto;
         }
+
         .quote-section h3 {
             margin-top: 0;
             color: #FFA500;
         }
+
         .quote-section p {
             margin: 12px 0;
         }
+
         .total {
             font-size: 20px;
             font-weight: bold;
@@ -170,23 +192,31 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-top: 25px;
             border-radius: 5px;
         }
+
         footer {
             text-align: center;
             font-size: 13px;
             color: #666;
             margin-top: 40px;
         }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px 10px;
+            }
+
+            header img {
+                max-width: 180px;
             }
         }
     </style>
 </head>
 <body>
+    <img src="watermark.png" class="watermark" alt="Watermark">
+
     <div class="container">
         <header>
-            <h1>🚗 Be Forward Aruba</h1>
+            <img src="logo.png" alt="Be Forward Aruba Logo">
             <p>Vehicle Import Quote</p>
         </header>
 
