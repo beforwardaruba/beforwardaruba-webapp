@@ -34,17 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
             quoteContainer.innerHTML = `
                 <h3>📣 ${carModel}</h3>
-                <p>🇯🇵 <strong>Price - Auto + Shipping:</strong> ${formatCurrency(carValueAWG)} AWG</p>
-                <p>🇦🇷 <strong>Price - Invoerrecht:</strong> ${formatCurrency(importDutyAmount)} AWG</p>
-                <p>🚗 <strong>Price - Handling fees:</strong> ${formatCurrency(handlingFee)} AWG</p>
-                <h4 class="total">💵 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
-                <p>1️⃣ E prome pago tin cu wordo manda pa Beforward Japon na US Dollar (${formatCurrency(carValueUSD)} USD / ${formatCurrency(carValueAWG)} AWG) via un wire transfer. Si bo mester ayudo nos por assisti anytime.</p>
+                <p>🚢 Price - Auto + Shipping:<strong> ${formatCurrency(carValueAWG)} AWG</strong></p>
+                <p>📑 Price - Invoerrecht:<strong> ${formatCurrency(importDutyAmount)} AWG</strong></p>
+                <p>📦 Price - Handling fees:<strong> ${formatCurrency(handlingFee)} AWG</strong></p>
+                <h4 class="total">💰 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
+                <p>1️⃣ E prome pago tin cu wordo manda pa Beforward Japon na US Dollar <strong>(${formatCurrency(carValueUSD)} USD / ${formatCurrency(carValueAWG)} AWG</strong>) via un wire transfer. Si bo mester ayudo nos por assisti anytime.</p>
                 <p>2️⃣ Una bez e prome pago wordo confirma door di Beforward Japon nos lo manda bo C.A.P (Car Arrival Progress) pa track e status di bo order i wak e Shipping Schedule i Estimate Arrival Date.</p>
-                <p>3️⃣ E segundo pago tin cu wordo manda pa Beforward Aruba (${formatCurrency(importDutyAmount)} AWG + Handling fee ${formatCurrency(handlingFee)} AWG) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto yega Aruba!</p>
+                <p>3️⃣ E segundo pago tin cu wordo manda pa Beforward Aruba <strong>(${formatCurrency(importDutyAmount)} AWG + Handling fee ${formatCurrency(handlingFee)} AWG) = ${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto yega Aruba!</p>
                 <p>4️⃣ Documento pa clear out bo auto lo wordo manda for di Beforward Japon via DHL. Nos lo avisa bo ora esaki ta ready pa busca, of nos por schedule pa pasa busce serka bo cas of trabou.</p>
                 <p>5️⃣ E proceso total ta dura 60 pa 90 dia si ta for di Japon. 90 pa 120 dia si ta for di Korea of Singapore.</p>
                 <p>6️⃣ Nos lo jamabo ora bo auto ta ready pa pickup na Aruba 🚗</p>
-                <h5>💵 USD/AWG rate for today = ${usdToAwg}</h5>
+                <h5>💵 USD/AWG rate for today = ${usdToAwg}$</h5>
                 <p><strong>🚨 Warning:</strong> Please zorg pa no tin delay cu Stap 3️⃣ pa asina evita cu lo bin bewaking kosten pa cada dia cu e auto keda riba waf, esaki ta wordo hasi door di Departamento di Aduana.</p>
                 <p><strong>⚠️ Disclaimer:</strong> Please note that shipping times may vary due to the nature of shipping via boat. While we strive to ensure timely delivery, delays may occur beyond our control due to weather conditions, port congestion, or other unforeseen circumstances during transit. We appreciate your understanding and patience.</p>
             `;
