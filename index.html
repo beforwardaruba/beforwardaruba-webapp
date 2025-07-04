@@ -1,34 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beforward Online Quote App</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-  <div class="container">
-    <h1>Be Forward Aruba - Online Quote</h1>
-    <form id="quoteForm">
-      <label>Car Model:</label>
-      <input type="text" id="carModel" required />
-      <label>Car Price (USD):</label>
-      <input type="number" id="carPrice" required />
-      <label>Fuel Type:</label>
-      <select id="fuelType">
-        <option value="gasoline">Gasoline/Diesel (39%)</option>
-        <option value="hybrid">Hybrid (19%)</option>
-      </select>
-      <button type="submit">Generate Quote</button>
-    </form>
-    <div id="quoteOutput"></div>
-    <button id="exportPDF" style="display:none;">Export as PDF</button>
-    <button id="exportImage" style="display:none;">Export as Image</button>
-  </div>
-  <script src="script.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <div class="container">
+        <h1>Be Forward Quote Generator</h1>
+        
+        <!-- Input form for car details -->
+        <div class="form-group">
+            <label for="car-value">Car Value (AWG):</label>
+            <input type="number" id="car-value" placeholder="Enter car value in AWG" required>
+        </div>
+
+        <div class="form-group">
+            <label for="import-duty">Select Import Duty:</label>
+            <select id="import-duty">
+                <option value="39">39% (ICE)</option>
+                <option value="19">19% (Hybrid)</option>
+            </select>
+        </div>
+
+        <button id="generate-quote">Generate Quote</button>
+
+        <!-- Display the generated quote -->
+        <div id="quote-container" style="display:none;">
+            <!-- Quote details will be dynamically inserted here -->
+        </div>
+
+        <!-- Download buttons -->
+        <button id="download-pdf" style="display:none;">Download as PDF</button>
+        <button id="download-screenshot" style="display:none;">Download Screenshot</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
-
 </html>
