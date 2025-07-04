@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const generateQuoteBtn = document.getElementById('generate-quote');
     const quoteContainer = document.getElementById('quote-container');
     const downloadHtmlBtn = document.getElementById('download-html'); // New button for HTML download
+    const downloadPdfBtn = document.getElementById('download-pdf'); // New button for PDF download
     const importDutySelect = document.getElementById('import-duty'); // Select Import Duty dropdown
 
     // Handling fee (static value)
@@ -71,8 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p><strong>🚨 Please ensure no delay in Step 2️⃣ to avoid additional costs. </strong></p>
             `;
 
-            // Show the HTML download button
+            // Show the HTML and PDF download buttons
             downloadHtmlBtn.style.display = 'inline-block';
+            downloadPdfBtn.style.display = 'inline-block';
             generateQuoteBtn.disabled = false;
             generateQuoteBtn.innerText = "Generate Quote";
 
@@ -99,6 +101,30 @@ document.addEventListener('DOMContentLoaded', function () {
         link.href = URL.createObjectURL(blob);
         link.download = 'quote.html';
         link.click();
+    });
+
+    // Download the PDF version of the quote
+    downloadPdfBtn.addEventListener('click', function () {
+        // Ensure the quote content is fully loaded
+        if (quoteContainer.innerHTML.trim() === "") {
+            alert("No content to generate PDF.");
+            return;
+        }
+
+        // Set up options for PDF generation
+        const options = {
+            filename: 'quote.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        // Convert the quote container to PDF
+        html2pdf().from(quoteContainer).set(options).save().then(() => {
+            console.log("PDF generated successfully.");
+        }).catch((error) => {
+            console.error("Error generating PDF:", error);
+        });
     });
 
 });
