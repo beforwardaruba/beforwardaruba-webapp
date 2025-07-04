@@ -6,7 +6,7 @@
     <title>Quote Generator</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://unpkg.com/html2pdf.js"></script> <!-- We still include this for possible future use, but it's not needed for PDF generation now -->
+    <script src="https://unpkg.com/html2pdf.js"></script>
 </head>
 <body>
 
@@ -34,15 +34,17 @@
 
         <button id="generate-quote">Generate Quote</button>
 
-        <!-- Display the generated quote -->
+        <!-- Quote display -->
         <div id="quote-container" style="display:none;">
-            <!-- Quote details will be dynamically inserted here -->
+            <!-- Quote content gets inserted here -->
         </div>
 
         <!-- Download buttons -->
-        <button id="download-html" style="display:none;">Download HTML Version</button>
-        <button id="download-pdf" style="display:none;">Download PDF Version</button>
-
+        <div class="export-buttons">
+            <button id="download-html" style="display:none;">Download HTML Version</button>
+            <button id="download-pdf" style="display:none;">Download PDF Version</button>
+            <button id="generate-styled-html" style="display:none;">Generate Styled HTML Page</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
