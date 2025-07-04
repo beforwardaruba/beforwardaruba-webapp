@@ -74,8 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p><strong>3️⃣ E segundo pago tin cu wordo manda pa Beforward Aruba ( ${formatCurrency(importDutyAmount)} + Handling fee ${formatCurrency(handlingFee)}) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto jega Aruba!</p>
                 <p><strong>4️⃣ Documento pa clear out bo auto lo wordo manda for di Beforward Japon via DHL nos lo avisa bo ora esaki ta ready pa busca, esaki bo mester entrega na nos Office of nos por schedule pa pasa busce serka bo cas of trabow.</p>
                 <p><strong>5️⃣ E proceso total ta dura 60 pa 90 dia si ta for di Japon. 90 pa 120 dia si ta for di Korea of Singapore.</p>
-                <p><strong>6️⃣ Nos lo jamabo mane bo auto ta ready pa pickup na Aruba.</p>
-                <p><strong>Step 3️⃣</strong> Enjoy your car in Aruba 🚗🔑</p>
+                <p><strong>6️⃣ Nos lo jamabo mane bo auto ta ready pa pickup na Aruba 🚗</p>
                 <h4>💵 USD/AWG rate for today = ${usdToAwgRate}</h4>
                 <p><strong>🚨 Please ensure no delay in Step 2️⃣ to avoid additional costs. </strong></p>
                 <p><strong>⚠️ Disclaimer: Please note that shipping times may vary due to the nature of shipping via boat. While we strive to ensure timely delivery, delays may occur beyond our control due to weather conditions, port congestion, or other unforeseen circumstances during transit. We appreciate your understanding and patience.</strong></p>
