@@ -37,34 +37,47 @@ document.addEventListener('DOMContentLoaded', function () {
         const carModel = document.getElementById('car-model').value.trim();
         const carValueUSD = parseFloat(document.getElementById('car-value').value);
         const selectedDuty = parseInt(document.getElementById('import-duty').value);
-        
+
         if (carModel === "" || isNaN(carValueUSD)) {
             alert("Please enter a valid car model and car value.");
             return;
         }
 
-        // Fetch the exchange rate
-        const usdToAwgRate = await fetchExchangeRate();
+        // Show loading indicator (optional)
+        generateQuoteBtn.disabled = true;
+        generateQuoteBtn.innerText = "Generating...";
 
-        // Convert car value from USD to AWG
-        const carValueAWG = carValueUSD * usdToAwgRate;
+        try {
+            // Fetch the exchange rate
+            const usdToAwgRate = await fetchExchangeRate();
 
-        // Calculate the quote based on selected import duty
-        const totalCost = carValueAWG + (carValueAWG * (selectedDuty / 100)) + handlingFee;
-        
-        // Display the quote
-        quoteContainer.innerHTML = `
-            <h3>Your Quote</h3>
-            <p>Car Model: ${carModel}</p>
-            <p>Car Value: USD ${carValueUSD.toFixed(2)} (${carValueAWG.toFixed(2)} AWG)</p>
-            <p>Import Duty: ${selectedDuty}%</p>
-            <p>Handling Fee: AWG ${handlingFee}</p>
-            <p><strong>Total Cost: AWG ${totalCost.toFixed(2)}</strong></p>
-        `;
+            // Convert car value from USD to AWG
+            const carValueAWG = carValueUSD * usdToAwgRate;
 
-        // Show the download buttons
-        pdfBtn.style.display = 'inline-block';
-        screenshotBtn.style.display = 'inline-block';
+            // Calculate the quote based on selected import duty
+            const totalCost = carValueAWG + (carValueAWG * (selectedDuty / 100)) + handlingFee;
+
+            // Display the quote
+            quoteContainer.innerHTML = `
+                <h3>Your Quote</h3>
+                <p>Car Model: ${carModel}</p>
+                <p>Car Value: USD ${carValueUSD.toFixed(2)} (${carValueAWG.toFixed(2)} AWG)</p>
+                <p>Import Duty: ${selectedDuty}%</p>
+                <p>Handling Fee: AWG ${handlingFee}</p>
+                <p><strong>Total Cost: AWG ${totalCost.toFixed(2)}</strong></p>
+            `;
+
+            // Enable download buttons and reset the button text
+            pdfBtn.style.display = 'inline-block';
+            screenshotBtn.style.display = 'inline-block';
+            generateQuoteBtn.disabled = false;
+            generateQuoteBtn.innerText = "Generate Quote";
+
+        } catch (error) {
+            console.error("Error during quote generation:", error);
+            generateQuoteBtn.disabled = false;
+            generateQuoteBtn.innerText = "Generate Quote";
+        }
     });
 
     // Generate and download the PDF
