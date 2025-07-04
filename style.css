@@ -1,65 +1,135 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif; /* Poppins for a more modern look */
   background-color: #111;
   padding: 20px;
   color: #fff;
+  line-height: 1.6;
 }
 
 .container {
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
   background: #1c1c1c;
   padding: 30px;
-  box-shadow: 0 0 10px rgba(255,165,0,0.3);
-  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
+  border-radius: 12px;
 }
 
 h1 {
   text-align: center;
-  color: #FFA500;
+  color: #FFA500; /* Keeping the original color */
+  font-size: 2.5em;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
 }
 
 input, select {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
   border: none;
   background-color: #2b2b2b;
   color: #fff;
 }
 
 button {
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px;
+  font-size: 18px;
   background-color: #FFA500;
   color: #000;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 button:hover {
   background-color: #e69500;
 }
 
-#quote-output {
-  margin-top: 20px;
-  white-space: pre-wrap;
+#quote-container {
+  margin-top: 30px;
   background: #222;
-  padding: 15px;
-  border-left: 5px solid #FFA500;
-  border-radius: 5px;
+  padding: 30px;
+  border-left: 8px solid #FFA500;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  text-align: center;
 }
 
-.export-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+h3, h4, h5 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #FFA500;
+}
+
+h4 {
+  color: #4CAF50; /* A contrasting color for emphasis */
+}
+
+p {
+  font-size: 1.5em;
+  margin: 12px 0;
+}
+
+strong {
+  color: #FFD700; /* Gold color for important text */
+}
+
+#download-html {
+  padding: 12px;
+  font-size: 18px;
+  background-color: #007BFF;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#download-html:hover {
+  background-color: #0056b3;
+}
+
+/* Printer friendly styling */
+@media print {
+  body {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .container {
+    box-shadow: none;
+    padding: 15px;
+  }
+
+  #quote-container {
+    text-align: left;
+    padding: 25px;
+    border-left: 5px solid #FFA500;
+    margin-top: 15px;
+    font-size: 1.6em;
+  }
+  
+  h1, h3, h4, h5 {
+    text-align: center;
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.4em;
+  }
+
+  button, #download-html {
+    display: none;
+  }
 }
