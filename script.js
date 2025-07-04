@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>🚗 <strong>Price - Handling fees:</strong> ${formatCurrency(handlingFee)} AWG</p>
                 <h4>💵 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
                 <p><strong>Step 1️⃣</strong> Make the first payment to Beforward Japan 🇯🇵 in US Dollar (USD ${formatCurrency(carValueUSD)} / ${formatCurrency(carValueAWG)} AWG) via wire transfer. If you need help, we are available anytime.</p>
-                <p><strong>Step 2️⃣</strong> Second payment to Beforward Aruba 🇦🇼 (AWG ${formatCurrency(importDutyAmount)} + Handling fee AWG ${formatCurrency(handlingFee)}) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Once the payment is received, the car and documentation will be sent via DHL to Aruba. The documents include the B/L (Bill of Lading) and Import Certificate.</p>
+                <p><strong>Step 2️⃣</strong> Second payment to Beforward Aruba 🇦🇼 ( ${formatCurrency(importDutyAmount)} + Handling fee ${formatCurrency(handlingFee)}) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Once the payment is received, the car and documentation will be sent via DHL to Aruba. The documents include the B/L (Bill of Lading) and Import Certificate.</p>
                 <p><strong>Step 3️⃣</strong> Enjoy your car in Aruba 🚗🔑</p>
                 <h5>💵 USD/AWG rate for today = ${usdToAwgRate}</h5>
                 <p><strong>🚨 Please ensure no delay in Step 2️⃣ to avoid additional costs. </strong></p>
