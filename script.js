@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>🇦🇷 <strong>Price - Invoerrecht:</strong> ${formatCurrency(importDutyAmount)} AWG</p>
                 <p>🚗 <strong>Price - Handling fees:</strong> ${formatCurrency(handlingFee)} AWG</p>
                 <h4 class="total">💵 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
-                <p>1️⃣ E prome pago tin cu wordo manda pa Beforward Japon na US Dollar (USD ${formatCurrency(carValueUSD)} / ${formatCurrency(carValueAWG)} AWG) via un wire transfer. Si bo mester ayudo nos por assisti anytime</p>
+                <p>1️⃣ E prome pago tin cu wordo manda pa Beforward Japon na US Dollar ( ${formatCurrency(carValueUSD)} USD / ${formatCurrency(carValueAWG)} AWG) via un wire transfer. Si bo mester ayudo nos por assisti anytime</p>
                 <p>2️⃣ Una bez e prome pago wordo confirma door di Beforward Japon nos lo manda bo C.A.P (Car Arrival Progress) Pa asina bo track e status di bo order i tambe wak e Shipping Schedule i tambe e Estimate Arrival Date.</p>
-                <p>3️⃣ E segundo pago tin cu wordo manda pa Beforward Aruba ( ${formatCurrency(importDutyAmount)} + Handling fee ${formatCurrency(handlingFee)}) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto jega Aruba!</p>
+                <p>3️⃣ E segundo pago tin cu wordo manda pa Beforward Aruba ( ${formatCurrency(importDutyAmount)} AWG + Handling fee ${formatCurrency(handlingFee)} AWG) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto jega Aruba!</p>
                 <p>4️⃣ Documento pa clear out bo auto lo wordo manda for di Beforward Japon via DHL nos lo avisa bo ora esaki ta ready pa busca, esaki bo mester entrega na nos Office of nos por schedule pa pasa busce serka bo cas of trabow.</p>
                 <p>5️⃣ E proceso total ta dura 60 pa 90 dia si ta for di Japon. 90 pa 120 dia si ta for di Korea of Singapore.</p>
                 <p>6️⃣ Nos lo jamabo mane bo auto ta ready pa pickup na Aruba 🚗</p>
