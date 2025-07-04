@@ -105,25 +105,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Download the PDF version of the quote
     downloadPdfBtn.addEventListener('click', function () {
-        // Ensure the quote content is fully loaded
+        // Ensure content is not empty
         if (quoteContainer.innerHTML.trim() === "") {
             alert("No content to generate PDF.");
             return;
         }
 
-        // Set up options for PDF generation
-        const options = {
-            filename: 'quote.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2 },
-            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-        };
+        // Log content for debugging
+        console.log("PDF content:", quoteContainer.innerHTML);
 
-        // Convert the quote container to PDF
-        html2pdf().from(quoteContainer).set(options).save().then(() => {
-            console.log("PDF generated successfully.");
-        }).catch((error) => {
-            console.error("Error generating PDF:", error);
+        // Set up jsPDF instance
+        const doc = new jsPDF({
+            unit: 'mm',
+            format: 'a4',
+            orientation: 'portrait'
+        });
+
+        // Convert the HTML content of quoteContainer to PDF
+        doc.html(quoteContainer, {
+            callback: function (doc) {
+                // Save the PDF
+                doc.save('quote.pdf');
+                console.log("PDF generated successfully.");
+            },
+            margin: [10, 10, 10, 10], // Adjust margins
+            x: 10, // Horizontal starting position
+            y: 10, // Vertical starting position
+            html2canvas: {
+                scale: 2
+            }
         });
     });
 
