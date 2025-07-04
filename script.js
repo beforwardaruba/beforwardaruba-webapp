@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>6️⃣ Nos lo jamabo mane bo auto ta ready pa pickup na Aruba 🚗</p>
                 <h5>💵 USD/AWG rate for today = ${usdToAwgRate}</h5>
                 <p><strong>🚨 Please ensure no delay in Step 2️⃣ to avoid additional costs. </strong></p>
-                <p><strong>⚠️ Disclaimer: Please note that shipping times may vary due to the nature of shipping via boat. While we strive to ensure timely delivery, delays may occur beyond our control due to weather conditions, port congestion, or other unforeseen circumstances during transit. We appreciate your understanding and patience.</strong></p>
+                <p><strong>⚠️ Disclaimer: </strong>Please note that shipping times may vary due to the nature of shipping via boat. While we strive to ensure timely delivery, delays may occur beyond our control due to weather conditions, port congestion, or other unforeseen circumstances during transit. We appreciate your understanding and patience.</p>
             `;
 
             quoteContainer.style.display = 'block';
