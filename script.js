@@ -52,8 +52,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Convert car value from USD to AWG
             const carValueAWG = carValueUSD * usdToAwgRate;
 
-            // Calculate the quote based on selected import duty
-            const totalCost = carValueAWG + (carValueAWG * (selectedDuty / 100)) + handlingFee;
+            // Calculate the import duty and the second payment total
+            const importDutyAmount = carValueAWG * (selectedDuty / 100);
+            const secondPaymentTotal = importDutyAmount + handlingFee;
+
+            // Calculate the total cost
+            const totalCost = carValueAWG + importDutyAmount + handlingFee;
 
             // Format currency with commas and periods for decimal
             const formatCurrency = (value) => value.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -62,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
             quoteContainer.innerHTML = `
                 <h3>📣 ${carModel}</h3>
                 <p>🇯🇵 <strong>Price - Auto + Shipping:</strong> ${formatCurrency(carValueAWG)} AWG</p>
-                <p>🇦🇷 <strong>Price - Invoerrecht:</strong> ${formatCurrency(carValueAWG * (selectedDuty / 100))} AWG</p>
+                <p>🇦🇷 <strong>Price - Invoerrecht:</strong> ${formatCurrency(importDutyAmount)} AWG</p>
                 <p>🚗 <strong>Price - Handling fees:</strong> ${formatCurrency(handlingFee)} AWG</p>
                 <h4>💵 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
                 <p><strong>Step 1️⃣</strong> Make the first payment to Beforward Japan 🇯🇵 in US Dollar (USD ${formatCurrency(carValueUSD)} / ${formatCurrency(carValueAWG)} AWG) via wire transfer. If you need help, we are available anytime.</p>
-                <p><strong>Step 2️⃣</strong> Second payment to Beforward Aruba 🇦🇼 (AWG ${formatCurrency(carValueAWG * (selectedDuty / 100))}) - Once the payment is received, the car and documentation will be sent via DHL to Aruba. The documents include the B/L (Bill of Lading) and Import Certificate.</p>
+                <p><strong>Step 2️⃣</strong> Second payment to Beforward Aruba 🇦🇼 (AWG ${formatCurrency(importDutyAmount)} + Handling fee AWG ${formatCurrency(handlingFee)}) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Once the payment is received, the car and documentation will be sent via DHL to Aruba. The documents include the B/L (Bill of Lading) and Import Certificate.</p>
                 <p><strong>Step 3️⃣</strong> Enjoy your car in Aruba 🚗🔑</p>
                 <h5>💵 USD/AWG rate for today = ${usdToAwgRate}</h5>
                 <p><strong>🚨 Please ensure no delay in Step 2️⃣ to avoid additional costs. </strong></p>
