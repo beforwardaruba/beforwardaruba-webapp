@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Display the quote with a more structured format
             quoteContainer.innerHTML = `
-                <h3>📣 ${carModel}</h3>
+<h3>📣 ${carModel}</h3>
                 <p>🚗+🚢 <strong>Price - Auto + Shipping:</strong> ${formatCurrency(carValueAWG)} AWG</p>
                 <p>📝 <strong>Price - Invoerrecht:</strong> ${formatCurrency(importDutyAmount)} AWG</p>
                 <p>🚗 <strong>Price - Handling fees:</strong> ${formatCurrency(handlingFee)} AWG</p>
-                <p>💸 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</p>
-                <p><strong>1️⃣ E prome pago tin cu wordo manda pa Beforward Japon na US Dollar (USD ${formatCurrency(carValueUSD)} / ${formatCurrency(carValueAWG)} AWG) via un wire transfer. Si bo mester ayudo nos por assisti anytime.</strong></p>
+                <h4>💸 <strong>Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
+                <p><strong>1️⃣</strong> E prome pago tin cu wordo manda pa Beforward Japon na US Dollar (USD ${formatCurrency(carValueUSD)} / ${formatCurrency(carValueAWG)} AWG) via un wire transfer. Si bo mester ayudo nos por assisti anytime.</p>
                 <p><strong>2️⃣</strong> Una bez e prome pago wordo confirma door di Beforward Japon nos lo manda bo C.A.P (Car Arrival Progress) Pa asina bo track e status di bo order i tambe wak e Shipping Schedule i tambe e Estimate Arrival Date.</p>
                 <p><strong>3️⃣</strong> E segundo pago tin cu wordo manda pa Beforward Aruba ( ${formatCurrency(importDutyAmount)} + Handling fee ${formatCurrency(handlingFee)}) = <strong>${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto jega Aruba.</p>
                 <p><strong>4️⃣</strong> Documento pa clear out bo auto lo wordo manda for di Beforward Japon via DHL nos lo avisa bo ora esaki ta ready pa busca, esaki bo mester entrega na nos Office of nos por schedule pa pasa busce serka bo cas of trabow.</p>
