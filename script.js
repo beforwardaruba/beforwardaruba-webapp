@@ -13,7 +13,7 @@ async function fetchExchangeRate() {
         }
     } catch (error) {
         alert("Error fetching exchange rate: " + error.message);
-        return 1.78; // Fallback rate if the API call fails
+        return 1.80; // Fallback rate if the API call fails
     }
 }
 
