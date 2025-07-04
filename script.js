@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const quoteContainer = document.getElementById('quote-container');
     const pdfBtn = document.getElementById('download-pdf');
     const screenshotBtn = document.getElementById('download-screenshot');
-    const printBtn = document.getElementById('print-quote');
+    const downloadHtmlBtn = document.getElementById('download-html'); // New button for HTML download
 
     // Handling fee (static value)
     const handlingFee = 1000;  // AWG
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Enable download buttons and reset the button text
             pdfBtn.style.display = 'inline-block';
             screenshotBtn.style.display = 'inline-block';
-            printBtn.style.display = 'inline-block';
+            downloadHtmlBtn.style.display = 'inline-block';  // Show HTML download button
             generateQuoteBtn.disabled = false;
             generateQuoteBtn.innerText = "Generate Quote";
 
@@ -93,6 +93,13 @@ document.addEventListener('DOMContentLoaded', function () {
             html2canvas: { scale: 4 },
             jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
         };
+
+        // Ensure the content is ready and rendered before calling html2pdf
+        if (quoteContainer.innerHTML.trim() === "") {
+            alert("No quote to download.");
+            return;
+        }
+
         html2pdf().from(quoteContainer).set(options).save();
     });
 
@@ -107,9 +114,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Print the quote manually via PC
-    printBtn.addEventListener('click', function () {
-        window.print();
+    // Download the HTML version of the quote
+    downloadHtmlBtn.addEventListener('click', function () {
+        const htmlContent = `
+            <html>
+                <head><title>Quote</title></head>
+                <body>
+                    ${quoteContainer.innerHTML}
+                </body>
+            </html>
+        `;
+        
+        const blob = new Blob([htmlContent], { type: 'text/html' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'quote.html';
+        link.click();
     });
 
 });
