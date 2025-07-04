@@ -1,54 +1,64 @@
-document.getElementById('quote-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
+// Include jsPDF and html2canvas from CDN
+const jsPDF = window.jspdf.jsPDF;
+const html2canvas = window.html2canvas;
 
-  const model = document.getElementById('model').value;
-  const carPrice = parseFloat(document.getElementById('price').value);
-  const fuelType = document.getElementById('fuel').value;
+document.addEventListener('DOMContentLoaded', function () {
 
-  const importDutyRate = fuelType === 'hybrid' ? 0.19 : 0.39;
+    // Form and quote result elements
+    const generateQuoteBtn = document.getElementById('generate-quote');
+    const quoteContainer = document.getElementById('quote-container');
+    const pdfBtn = document.getElementById('download-pdf');
+    const screenshotBtn = document.getElementById('download-screenshot');
 
-  const importDuty = carPrice * importDutyRate;
-  const totalUSD = carPrice + importDuty;
+    // Handling fee (static value)
+    const handlingFee = 1000;  // AWG
 
-  let rate = 1.79;
-  try {
-    const res = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=AWG');
-    const data = await res.json();
-    rate = data.rates.AWG || rate;
-  } catch (err) {
-    console.warn('Exchange rate fallback to 1.79 AWG');
-  }
+    // Event listener to generate the quote
+    generateQuoteBtn.addEventListener('click', function () {
+        const carValue = parseFloat(document.getElementById('car-value').value);
+        const selectedDuty = parseInt(document.getElementById('import-duty').value);
+        
+        if (isNaN(carValue)) {
+            alert("Please enter a valid value for car value.");
+            return;
+        }
 
-  const handlingFeeAWG = 1000;
-  const totalAWG = (carPrice + importDuty) * rate + handlingFeeAWG;
+        // Calculate the quote based on selected import duty
+        const totalCost = carValue + (carValue * (selectedDuty / 100)) + handlingFee;
+        
+        // Display the quote
+        quoteContainer.innerHTML = `
+            <h3>Your Quote</h3>
+            <p>Car Value: AWG ${carValue.toFixed(2)}</p>
+            <p>Import Duty: ${selectedDuty}%</p>
+            <p>Handling Fee: AWG ${handlingFee}</p>
+            <p><strong>Total Cost: AWG ${totalCost.toFixed(2)}</strong></p>
+        `;
 
-  const quote = `
-🚗 Quote for: ${model}
+        // Show the download buttons
+        pdfBtn.style.display = 'inline-block';
+        screenshotBtn.style.display = 'inline-block';
+    });
 
-💵 Car Price: $${carPrice.toFixed(2)} USD
-⚙️ Fuel Type: ${fuelType}
-📦 Import Duty (${(importDutyRate * 100).toFixed(0)}%): $${importDuty.toFixed(2)} USD
-💰 Total (USD): $${totalUSD.toFixed(2)} USD
+    // Generate and download the PDF
+    pdfBtn.addEventListener('click', function () {
+        const doc = new jsPDF();
+        doc.html(quoteContainer, {
+            callback: function (doc) {
+                doc.save('quote.pdf');
+            }
+        });
+    });
 
-📦 Handling Fee: ƒ${handlingFeeAWG.toFixed(2)}
-💳 Total in AWG (Rate: ${rate.toFixed(2)}): ${totalAWG.toFixed(2)} AWG
+    // Generate and download screenshot
+    screenshotBtn.addEventListener('click', function () {
+        html2canvas(quoteContainer).then(canvas => {
+            const imgData = canvas.toDataURL('image/png');
+            const link = document.createElement('a');
+            link.href = imgData;
+            link.download = 'quote.png';
+            link.click();
+        });
+    });
 
-📝 Please keep this quote for your records.
-  `;
-
-  document.getElementById('quote-output').textContent = quote;
-});
-
-document.getElementById('download-pdf').addEventListener('click', function () {
-  const element = document.getElementById('quote-output');
-  html2pdf().from(element).save('quote.pdf');
-});
-
-document.getElementById('download-image').addEventListener('click', function () {
-  html2canvas(document.getElementById('quote-output')).then(canvas => {
-    const link = document.createElement('a');
-    link.download = 'quote.png';
-    link.href = canvas.toDataURL();
-    link.click();
-  });
 });
