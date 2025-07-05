@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 
     <footer>
-      &copy; ${new Date().getFullYear()} Be Forward Aruba. All rights reserved.<br />
+      &copy; ${new Date().getFullYear()} Be Forward Aruba. All rights reserved.<br /><br />
       💡 This quote is for informational purposes and may change based on shipping conditions, customs fees, and exchange rates.
     </footer>
   </div>
