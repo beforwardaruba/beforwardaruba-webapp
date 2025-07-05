@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
       top: 20px;
       right: 20px;
       padding: 10px 16px;
-      background-color: #FFA500;
+      background-color: #e66b00;
       color: #000;
       border: none;
       border-radius: 4px;
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     .quote-section h3 {
       margin-top: 0;
-      color: #FFA500;
+      color: #e66b00;
       font-size: 18px;
     }
 
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
       font-weight: bold;
       background: #fff8e1;
       padding: 12px;
-      border-left: 5px solid #FFA500;
+      border-left: 5px solid #e66b00;
       margin-top: 20px;
       border-radius: 5px;
     }
