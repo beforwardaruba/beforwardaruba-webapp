@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>📑 Price - Invoerrecht:<strong> ${formatCurrency(importDutyAmount)} AWG</strong></p>
                 <p>📦 Price - Handling fees:<strong> ${formatCurrency(handlingFee)} AWG</strong></p>
                 <h4 class="total"><strong>💵 Final Price:</strong> ${formatCurrency(totalCost)} AWG</h4>
-                <p>⬇️ Below are the 6️⃣ steps to order from <strong>Be Forward Aruba</strong></p>
+                <p>⬇️ Sigi 6️⃣ stap facil pa bo order for <strong>Be Forward Aruba</strong></p>
                 <p>1️⃣ E prome pago tin cu wordo manda pa Beforward Japon na US Dollar <strong>(${formatCurrency(carValueUSD)} USD / ${formatCurrency(carValueAWG)} AWG</strong>) via un wire transfer. Si bo mester ayudo nos por assisti anytime.</p>
                 <p>2️⃣ Una bez e prome pago wordo confirma door di Be Forward Japon nos lo manda bo C.A.P (Car Arrival Progress) pa track e status di bo order i wak e Shipping Schedule i Estimate Arrival Date.</p>
                 <p>3️⃣ E segundo pago tin cu wordo manda pa Be Forward Aruba <strong>(${formatCurrency(importDutyAmount)} AWG + Handling fee ${formatCurrency(handlingFee)} AWG) = ${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto yega Aruba!</p>
