@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
       top: 20px;
       right: 20px;
       padding: 10px 16px;
-      background-color: #e66b00;
+      background-color: #FFA500;
       color: #000;
       border: none;
       border-radius: 4px;
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      opacity: 0.05;
+      opacity: 0.5; /* Updated opacity */
       z-index: 0;
       width: 60%;
       max-width: 500px;
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     .quote-section h3 {
       margin-top: 0;
-      color: #e66b00;
+      color: #FFA500;
       font-size: 18px;
     }
 
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
       font-weight: bold;
       background: #fff8e1;
       padding: 12px;
-      border-left: 5px solid #e66b00;
+      border-left: 5px solid #FFA500;
       margin-top: 20px;
       border-radius: 5px;
     }
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <footer>
       &copy; ${new Date().getFullYear()} Be Forward Aruba. All rights reserved.<br />
-      This quote is for informational purposes only and subject to change based on shipping conditions.
+      This quote is for informational purposes and may change based on shipping conditions, customs fees, and exchange rates.
     </footer>
   </div>
 </body>
