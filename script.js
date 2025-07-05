@@ -225,10 +225,10 @@ document.addEventListener('DOMContentLoaded', function () {
 </head>
 <body>
   <button onclick="window.print()" class="print-button">🖨️ Print Quote</button>
-  <img src="https://beforwardaruba.github.io/webapp/watermark.png" class="watermark" alt="Watermark" />
+  <img src="https://beforwardaruba.github.io/onlinecalculator/watermark.png" class="watermark" alt="Watermark" />
   <div class="container">
     <header>
-      <img src="https://beforwardaruba.github.io/webapp/logo.png" alt="Be Forward Aruba Logo" />
+      <img src="https://beforwardaruba.github.io/onlinecalculator/" alt="Be Forward Aruba " />
       <div class="subtext">Your Vehicle Import Quote</div>
     </header>
 
