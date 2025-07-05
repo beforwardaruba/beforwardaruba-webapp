@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>2️⃣ Una bez e prome pago wordo confirma door di Beforward Japon nos lo manda bo C.A.P (Car Arrival Progress) pa track e status di bo order i wak e Shipping Schedule i Estimate Arrival Date.</p>
                 <p>3️⃣ E segundo pago tin cu wordo manda pa Beforward Aruba <strong>(${formatCurrency(importDutyAmount)} AWG + Handling fee ${formatCurrency(handlingFee)} AWG) = ${formatCurrency(secondPaymentTotal)} AWG</strong> - Esaki ta wordo hasi prome cu e auto yega Aruba!</p>
                 <p>4️⃣ Documento pa clear out bo auto lo wordo manda for di Beforward Japon via DHL. Nos lo avisa bo ora esaki ta ready pa busca, of nos por schedule pa pasa busce serka bo cas of trabou.</p>
-                <p>5️⃣ E proceso total ta dura 60 pa 90 dia si ta for di Japon. 90 pa 120 dia si ta for di Korea of Singapore.</p>
-                <p>6️⃣ Nos lo jamabo ora bo auto ta ready pa pickup na Aruba 🚗</p>
+                <p>5️⃣ E proceso total ta dura 60 pa 90 dia si ta for di Japon. 90 pa 120 dia si ta for di South Korea of Singapore.</p>
+                <p>6️⃣ Ora e auto ta na Aruba, nos lo contact bo pa bo pasa busca bo auto na e parking lot di Aruba Port Authority. 🚗</p>
                 <h5>💰 USD/AWG rate for today = $ ${usdToAwg}</h5>
                 <p><strong>🚨 Warning:</strong> Please zorg pa no tin delay cu Stap 3️⃣ pa asina evita cu lo bin bewaking kosten pa cada dia cu e auto keda riba waf, esaki ta wordo hasi door di Departamento di Aduana.</p>
                 <p><strong>⚠️ Disclaimer:</strong> Please note that shipping times may vary due to the nature of shipping via boat. While we strive to ensure timely delivery, delays may occur beyond our control due to weather conditions, port congestion, or other unforeseen circumstances during transit. We appreciate your understanding and patience.</p>
