@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <img src="https://beforwardaruba.github.io/onlinecalculator/watermark.png" class="watermark" alt="Watermark" />
   <div class="container">
     <header>
-      <img src="https://beforwardaruba.github.io/onlinecalculator/" alt="Be Forward Aruba " />
+      <img src="https://beforwardaruba.github.io/onlinecalculator/logo.png" alt="Be Forward Aruba " />
       <div class="subtext">Your Vehicle Import Quote</div>
     </header>
 
